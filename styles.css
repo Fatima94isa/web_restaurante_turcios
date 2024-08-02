@@ -1,0 +1,374 @@
+/* Estilos del carrusel */
+.carousel {
+    position: relative;
+    width: 100%;
+    height: 70vh; /* Ajusta la altura del carrusel */
+    overflow: hidden;
+    margin-bottom: 20px; /* Añade un margen inferior para separar del contenido siguiente */
+}
+
+.carousel-item {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+
+.carousel-item.active {
+    opacity: 1;
+}
+
+.carousel-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.carousel-caption {
+    position: absolute;
+    top: 50%; /* Cambiado de bottom a top */
+    left: 50%;
+    transform: translate(-50%, -50%); /* Centra el texto vertical y horizontalmente */
+    color: white;
+    text-align: center;
+    background: rgba(0, 0, 0, 0.5); /* Fondo semitransparente para mejor legibilidad */
+    padding: 20px;
+    border-radius: 8px;
+}
+
+/* Estilos generales */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #641e1e;
+    color: #fff;
+}
+
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: rgba(117, 140, 186, 0.9);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    z-index: 1000;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    height: 40px;
+    margin-right: 10px;
+}
+
+.logo span {
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #fff;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+}
+
+.menu {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+.menu li {
+    margin-left: 20px;
+}
+
+.menu li a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 1em;
+    transition: color 0.3s;
+}
+
+.menu li a:hover {
+    color: #00ff3cd8;
+}
+
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    background-color: #333;
+    list-style: none;
+    padding: 10px;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.dropdown:hover .dropdown-menu {
+    display: block;
+}
+
+.dropdown-menu li {
+    margin: 0;
+}
+
+.dropdown-menu li a {
+    color: #fff;
+    padding: 8px 12px;
+    display: block;
+    white-space: nowrap;
+}
+
+.dropdown-menu li a:hover {
+    background-color: #00ff2ad5;
+}
+
+/* Sección del menú */
+.menu-section {
+    padding: 100px 20px 20px;
+    text-align: center;
+}
+
+.menu-section h2 {
+    margin-bottom: 20px;
+    font-size: 2.5em;
+    font-family: 'Brush Script MT', cursive;
+    color: #f8f6f6;
+}
+
+.menu-section .description {
+    margin-bottom: 40px;
+    font-size: 1.2em;
+    color: #bbb;
+}
+
+.menu-items {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.menu-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.menu-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.7);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    color: white;
+    font-size: 1.2em;
+    font-weight: bold;
+    text-align: center;
+}
+
+.menu-item:hover .overlay {
+    opacity: 1;
+}
+
+.menu-item:hover img {
+    transform: scale(1.05);
+}
+
+.menu-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+@media (max-width: 768px) {
+    .menu-items {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 480px) {
+    .menu-items {
+        grid-template-columns: 1fr;
+    }
+    .menu {
+        flex-direction: column;
+    }
+
+    .menu li {
+        margin: 10px 0;
+    }
+}
+
+/* Sección de ventas */
+.sales-section {
+    padding: 20px;
+    text-align: center;
+    background-color: #333;
+    border: 1px solid #ffffff;
+    border-radius: 8px;
+    margin: 20px 0;
+}
+
+.sales-section h2 {
+    margin-bottom: 20px;
+    font-size: 2em;
+    color: #fcfcfc;
+}
+
+.sales-items {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.sales-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #a3a3a3;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(255, 255, 255, 0.1);
+    width: 30%;
+    max-width: 200px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+}
+
+.sales-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 8px rgba(255, 255, 255, 0.2);
+    background-color: #8b8b8b;
+}
+
+.sales-item i {
+    font-size: 3em;
+    color: #00ff08bd;
+    margin-bottom: 10px;
+}
+
+.sales-text {
+    text-align: center;
+}
+
+.sales-text p {
+    margin: 5px 0;
+}
+
+.sales-number {
+    font-size: 2em;
+    font-weight: bold;
+    color: #333;
+}
+
+@media (max-width: 768px) {
+    .sales-item {
+        width: 45%;
+    }
+}
+
+/* Sección del carrusel en la página "acerca.html" */
+.acerca-carousel {
+    position: relative;
+    height: 100vh; /* Altura completa de la ventana */
+    width: 100%;
+    overflow: hidden;
+}
+
+.acerca-carousel .carousel-item {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.acerca-carousel .carousel-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.acerca-carousel .carousel-caption {
+    position: absolute;
+    top: 50%; /* Centrar verticalmente */
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #fff;
+    text-align: center;
+    background: rgba(0, 0, 0, 0.5);
+    padding: 20px;
+    border-radius: 8px;
+}
+
+/* Sección debajo del carrusel */
+.acerca-section {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 20px;
+    background: #f8f9fa;
+}
+
+.acerca-item {
+    position: relative;
+    width: 22%;
+    height: 200px;
+    margin-bottom: 20px;
+    overflow: hidden;
+    border-radius: 8px;
+}
+
+.acerca-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.acerca-item .acerca-text {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: #fff;
+    text-align: center;
+    background: rgba(0, 0, 0, 0.5);
+    padding: 10px;
+    border-radius: 5px;
+    width: 90%;
+}
+
+.acerca-item:hover img {
+    transform: scale(1.1);
+}
+
+.acerca-item:hover .acerca-text {
+    background: rgba(0, 0, 0, 0.7);
+}
+
+@media (max-width: 768px) {
+    .acerca-item {
+        width: 45%;
+        height: 150px;
+    }
+}

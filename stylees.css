@@ -1,0 +1,240 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    width: 80%;
+    margin: 30px auto;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+h1 {
+    color: #b28d5c; /* Warm, restaurant-like color */
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.form-group {
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+}
+
+.form-group label {
+    display: block;
+    font-weight: bold;
+    width: 150px;
+}
+
+.form-group input, .form-group select {
+    width: calc(100% - 160px);
+    padding: 8px;
+    border: 1px solid #ced4da;
+    border-radius: 4px;
+    margin-left: 10px;
+}
+
+.form-group input[type="number"] {
+    width: 100%;
+}
+
+.form-group button {
+    background-color: #8e6c40; /* Warm, restaurant-like color */
+    color: #ffffff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    margin: 10px 5px;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.form-group button:hover {
+    background-color: #689a1d;
+    transform: scale(1.05);
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+}
+
+table, th, td {
+    border: 1px solid #dee2e6;
+}
+
+th, td {
+    padding: 10px;
+    text-align: left;
+}
+
+th {
+    background-color: #7db72b; /* Warm, restaurant-like color */
+    color: #ffffff;
+}
+
+tr {
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+tr:hover {
+    background-color: #f3d19c; /* Lighter shade for hover effect */
+    cursor: pointer;
+    transform: scale(1.02);
+}
+
+.totals {
+    margin-top: 20px;
+    text-align: right;
+}
+
+.totals .form-group {
+    justify-content: flex-end;
+}
+
+.totals .form-group label, .totals .form-group input {
+    width: auto;
+    margin-left: 0;
+}
+
+.totals .form-group input {
+    width: 150px;
+    text-align: right;
+}
+
+.bottom-buttons {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.bottom-buttons button {
+    background-color: #78b72b; /* Warm, restaurant-like color */
+    color: #ffffff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s, transform 0.3s;
+    margin: 0 10px;
+}
+
+.bottom-buttons button:hover {
+    background-color: #9a631d;
+    transform: scale(1.05);
+}
+
+.add-dish-button {
+    background-color: #b77a2b; /* Warm, restaurant-like color */
+}
+
+.add-dish-button:hover {
+    background-color: #9a631d;
+}
+
+.form-section {
+    margin-bottom: 20px;
+}
+
+.form-section .form-group {
+    margin-bottom: 10px;
+}
+
+.form-section .form-group label {
+    width: 150px;
+}
+
+.invoice-number {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+/* Estilo para la barra de navegación */
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #72216d; /* Warm, restaurant-like color */
+    padding: 10px 20px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.navbar .logo {
+    display: flex;
+    align-items: center;
+}
+
+.navbar .logo img {
+    height: 50px;
+    margin-right: 10px;
+}
+
+.navbar .logo span {
+    color: #ffffff;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.navbar .menu {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.navbar .menu li {
+    margin-left: 20px;
+    position: relative;
+}
+
+.navbar .menu li a {
+    color: #ffffff;
+    text-decoration: none;
+    padding: 10px 15px;
+    display: block;
+    transition: background-color 0.3s;
+}
+
+.navbar .menu li a:hover {
+    background-color: #ae7730da;
+    border-radius: 4px;
+}
+
+.navbar .menu li .dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #ffffff;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.navbar .menu li .dropdown-menu li {
+    margin: 0;
+}
+
+.navbar .menu li .dropdown-menu li a {
+    color: #b77a2b;
+    padding: 10px 15px;
+    display: block;
+}
+
+.navbar .menu li .dropdown-menu li a:hover {
+    background-color: #e9ecef;
+}
+
+.navbar .menu li:hover .dropdown-menu {
+    display: block;
+}

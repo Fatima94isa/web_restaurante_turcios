@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menú de Comidas</title>
+    <link rel="icon" href="./img/Logo.jpg" type="image/jpg" size="16x16">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #641e1e;
+            color: #fff;
+        }
+
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(117, 140, 186, 0.9);
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+            z-index: 1000;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo img {
+            height: 40px;
+            margin-right: 10px;
+        }
+
+        .logo span {
+            font-size: 1.5em;
+            font-weight: bold;
+            color: #fff;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+        }
+
+        .menu {
+            list-style: none;
+            display: flex;
+            margin: 0;
+            padding: 0;
+        }
+
+        .menu li {
+            margin-left: 20px;
+        }
+
+        .menu li a {
+            text-decoration: none;
+            color: #fff;
+            font-size: 1em;
+            transition: color 0.3s;
+        }
+
+        .menu li a:hover {
+            color: #3167a1;
+        }
+
+        .dropdown-menu {
+            display: none;
+            position: absolute;
+            background-color: #333;
+            list-style: none;
+            padding: 10px;
+            border-radius: 4px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .dropdown:hover .dropdown-menu {
+            display: block;
+        }
+
+        .dropdown-menu li {
+            margin: 0;
+        }
+
+        .dropdown-menu li a {
+            color: #fff;
+            padding: 8px 12px;
+            display: block;
+            white-space: nowrap;
+        }
+
+        .dropdown-menu li a:hover {
+            background-color: #1c846c;
+        }
+
+        .menu-section {
+            padding: 100px 20px 20px;
+            text-align: center;
+        }
+
+        .menu-section h2 {
+            margin-bottom: 20px;
+            font-size: 2.5em;
+            font-family: 'Brush Script MT', cursive;
+            color: #fff;
+        }
+
+        .menu-section .description {
+            margin-bottom: 40px;
+            font-size: 1.2em;
+            color: #bbb;
+        }
+
+        .menu-items {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            position: relative;
+        }
+
+        .menu-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+            animation: shake 1s ease-in-out;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .menu-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: rgba(0, 0, 0, 0.7);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            color: white;
+            font-size: 1.2em;
+            font-weight: bold;
+            text-align: center;
+        }
+
+        .menu-item:hover .overlay {
+            opacity: 1;
+        }
+
+        .menu-item:hover img {
+            transform: scale(1.05);
+        }
+
+        .menu-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+        }
+
+        @keyframes shake {
+            0% { transform: translateY(-100px); opacity: 0; }
+            50% { transform: translateY(0); opacity: 1; }
+            100% { transform: translateY(0); opacity: 1; }
+        }
+
+        @media (max-width: 768px) {
+            .menu-items {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 480px) {
+            .menu-items {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <img src="./img/Logo22.png" alt="Logo">
+                <span>Juancho's Restaurant</span>
+            </div>
+            <ul class="menu">
+                <li><a href="index.html"><i class="fas fa-home"></i> Inicio</a></li>
+                <li class="dropdown">
+                    <a href="acerca.html"><i class="fas fa-info-circle"></i> Acerca de</a>
+                </li>
+                <li class="dropdown">
+                    <a href="#"><i class="fas fa-utensils"></i> Nuestro Menú <i class="fas fa-caret-down"></i></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="comidas.html"><i class="fas fa-hamburger"></i> Comidas</a></li>
+                        <li><a href="bebidas.html"><i class="fas fa-coffee"></i> Bebidas</a></li>
+                        <li><a href="postres.html"><i class="fas fa-ice-cream"></i> Postres</a></li>
+                        <li><a href="demas.html"><i class="fas fa-ellipsis-h"></i> Demás</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="#"><i class="fas fa-phone"></i> Contáctanos <i class="fas fa-caret-down"></i></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="https://www.whatsapp.com"><i class="fab fa-whatsapp"></i> WhatsApp</a></li>
+                        <li><a href="https://www.facebook.com/itjamc"><i class="fab fa-facebook"></i> Facebook</a></li>
+                        <li><a href="https://www.instagram.com/instituto_juancho/"><i class="fab fa-instagram"></i> Instagram</a></li>
+                        <li><a href="https://www.google.com/maps/place/Instituto+T%C3%A9cnico+Juan+Alberto+Melgar+Castro/@14.9842211,-88.0204976,16.96z/data=!4m9!1m2!2m1!1sca%C3%B1averal!3m5!1s0x8f65d7846df8a6db:0xaa1172c4ec1a7b11!8m2!3d14.9836277!4d-88.0182472!16s%2Fg%2F1hdzpq346?entry=ttu"><i class="fas fa-map-marker-alt"></i> Ubicación</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="#"><i class="fas fa-envelope"></i class="fas fa-caret-down"> Formulario</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="reserva_formulario.php"><i class="fas fa-edit"></i> Reserva</a></li>
+                            <li><a href="facturacion.php"><i class="fas fa-user-check"></i> Factura</a></li>
+                            <li><a href="reserva_paginacion.php"><i class="fas fa-user-group"></i> Paginacion</a></li>
+                            <li><a href="agregar_platillo.php"><i class="fas fa-utensils"></i> Platillos</a></li>
+                        </ul>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="menu-section">
+        <h2>Los Mejores Dulces</h2>
+        <p class="description">Descubre nuestros irresistibles dulces, elaborados con los ingredientes más finos y la mayor dedicación. En Juancho's Restaurant, nos enorgullecemos de ofrecer una experiencia dulce y memorable, con opciones que deleitarán tu paladar. ¡Explora nuestro menú y deja que nuestros dulces te hagan sonreír!</p>
+        
+        <div class="menu-items">
+            <div class="menu-item">
+                <img src="./img/espumillas.jpg" alt="espumillas">
+                <div class="overlay">
+                    <span class="text">espumillas - L20.00</span>
+                </div>
+            </div>
+            <div class="menu-item">
+                <img src="./img/gomitas.jpg" alt="gomitas">
+                <div class="overlay">
+                    <span class="text">gomitas - L25.00</span>
+                </div>
+            </div>
+            <div class="menu-item">
+                <img src="./img/hazelnut_chocolates.jpg" alt="hazelnut_chocolates">
+                <div class="overlay">
+                    <span class="text">hazelnut chocolates - L45.00</span>
+                </div>
+            </div>
+            <div class="menu-item">
+                <img src="./img/Chocolate blanco.jpg" alt="chocolate blanco">
+                <div class="overlay">
+                    <span class="text">chocolate blanco - L50.00</span>
+                </div>
+            </div>
+            <div class="menu-item">
+                <img src="./img/caramelos.jpg" alt="caramelos">
+                <div class="overlay">
+                    <span class="text">caramelos - L25.00</span>
+                </div>
+            </div>
+            <div class="menu-item">
+                <img src="./img/dulce de coco.jpg" alt="dulce de coco">
+                <div class="overlay">
+                    <span class="text">dulce de coco - $30.00</span>
+                </div>
+            </div>
+            <div class="menu-item">
+                <img src="./img/dulce-de-leche.jpg" alt="dulce-de-leche">
+                <div class="overlay">
+                    <span class="text">dulce de leche - L35.00</span>
+                </div>
+            </div>
+            <div class="menu-item">
+                <img src="./img/Alcitron.png" alt="Alcitron">
+                <div class="overlay">
+                    <span class="text">Alcitron - L20.00</span>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+</body>
+</html>
